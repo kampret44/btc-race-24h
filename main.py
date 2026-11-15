@@ -14,7 +14,7 @@ Strategy (long only, one asset CBBTC vs USDC, start $1,000):
 
   Exit (the whole position, on a bar's close):
     - Trailing stop: once in profit, sell when the close retraces
-      50 bps from the highest close since entry.
+      60 bps from the highest close since entry.
     - Hard stop: sell if the close is 150 bps below the entry fill.
     - Max hold: sell after 240 bars (4 hours) in the position.
     - Cooldown: 30 bars after any exit before a new entry.
@@ -36,7 +36,7 @@ import makefun_bars
 SYMBOL = "CBBTC"
 SMA_BARS = 120
 DIP_BPS = 160          # buy when close is this far below the SMA (bps)
-TRAIL_BPS = 50         # sell on this retrace from the peak close, once in profit
+TRAIL_BPS = 60         # sell on this retrace from the peak close, once in profit
 STOP_BPS = 150         # hard stop below the entry fill (bps)
 MAX_HOLD_BARS = 240    # max bars to hold a position
 COOLDOWN_BARS = 30     # bars to wait after an exit before re-entering
